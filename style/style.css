@@ -60,7 +60,7 @@ header > p {
     font-size: 1.2em;
     max-width: 500px;
     margin: auto; /* necessaria para centralizar o paragrafo pois ao aplicar "max-width" o paragrafo deixa de ser texto e se torna caixa */
-    margin-bottom: 10px;
+    padding-bottom: 30px;
     padding-right: 10px;
     padding-left: 10px;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.300);
