@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --cor0: #d8ecf0;
+    --cor1: #83D3E1;
+    --cor2: #3DC4DB;
+    --cor3: #2F96A8;
+    --cor4: #1A525C;
+    --cor5: #39575C;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', 'cursive';
+    --fonte-android: 'Android', 'cursive';
+}
+/* Root compõe as variáveis globais do arquivo, começa sempre com "--" e em seguida define o nome da sua variável, que no caso são cores e irão aparecer com seus nomes definidos na listagem de cores com nome (no final da lista). Para o exemplo utilizado facilita muito no caso de precisar alterar uma cor base do site. */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/* Um seletor com asterisco é uma configuração global, ela seleciona todos os elementos do HTML. No caso foi utilizado para tirar margem e preenchimento automaticos que são dados a alguns elementos, para que possamos configurar ele do zero.*/
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\00A0\1F517';
+}
+
+header {
+    background-color: var(--cor4);
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.300);
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 500px;
+    margin: auto; /* necessaria para centralizar o paragrafo pois ao aplicar "max-width" o paragrafo deixa de ser texto e se torna caixa */
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.300);
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.200);
+}
+
+nav > a {
+    color: var(--cor0);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    transition-duration: 0.2s; /* configuracao nova */
+}
+
+nav > a:hover {
+    background-color: var(--cor2);
+    color: var(--cor5);
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.500);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    padding: 4px 0px 4px 8px;
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+}
+
+main img {
+    width: 100%;
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+    padding: 2px 4px;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 4px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block; /* usado "display: block" pois imagens por padrao nao sao caixas, sem ele o "margin: auto" nao funcionaria */
+    margin: auto;
+}
+
+div.video {
+    background-color: var(--cor3);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+
+    position: relative; /* configuracao "gambiarra" para o video ficar centralizado e se ajustar com a pagina */
+    padding-bottom: 57%; /* ajustar de acordo com cada video para que ele nao fique com barras pretas ao ser reproduzido */
+}
+
+div.video > iframe {
+    position: absolute; /* configuracao "gambiarra" para o video ficar centralizado e se ajustar com a pagina */
+    top: 5%; /* top e left so podem ser utilizados por estarem com "position: absolute" no video, alteram a distancia do video ate a borda da caixa */
+    left: 5%;
+    width: 90%;  /* width e height so podem ser utilizados por estarem com "position: absolute" no video, alteram a proporcao do video na caixa */
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor0);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.300);
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /* margem negativa faz a caixa crescer para fora! */
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0'; /* esse tipo de configuracao nao funciona em todos os navegadores. O nome original do simbolo, pego no emojipedia.org, era "U-2714" onde o "U-" foi substituido por "\" para funcionar no codigo. O codigo seguinte "00A0" é o "nbsp" (espaco sem quebra), para que o simbolo fique mais afastado do texto (tambem pode ser "0020") */
+    list-style-position: inside; /* outside vem como padrao, por isso elas ficam pra fora da caixa */
+    columns: 2; /* configuracao nova */
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
