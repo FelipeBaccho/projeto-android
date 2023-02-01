@@ -20,13 +20,11 @@
     --fonte-destaque: 'Bebas Neue', 'cursive';
     --fonte-android: 'Android', 'cursive';
 }
-/* Root compõe as variáveis globais do arquivo, começa sempre com "--" e em seguida define o nome da sua variável, que no caso são cores e irão aparecer com seus nomes definidos na listagem de cores com nome (no final da lista). Para o exemplo utilizado facilita muito no caso de precisar alterar uma cor base do site. */
 
 * {
     margin: 0px;
     padding: 0px;
 }
-/* Um seletor com asterisco é uma configuração global, ela seleciona todos os elementos do HTML. No caso foi utilizado para tirar margem e preenchimento automaticos que são dados a alguns elementos, para que possamos configurar ele do zero.*/
 
 body {
     background-color: var(--cor0);
@@ -59,7 +57,7 @@ header > p {
     font-family: var(--fonte-padrao);
     font-size: 1.2em;
     max-width: 500px;
-    margin: auto; /* necessaria para centralizar o paragrafo pois ao aplicar "max-width" o paragrafo deixa de ser texto e se torna caixa */
+    margin: auto;
     padding-bottom: 30px;
     padding-right: 10px;
     padding-left: 10px;
@@ -78,7 +76,7 @@ nav > a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px 5px 0px 0px;
-    transition-duration: 0.2s; /* configuracao nova */
+    transition-duration: 0.2s;
 }
 
 nav > a:hover {
@@ -146,7 +144,7 @@ main a:hover {
 
 main img.pequena {
     max-width: 350px;
-    display: block; /* usado "display: block" pois imagens por padrao nao sao caixas, sem ele o "margin: auto" nao funcionaria */
+    display: block;
     margin: auto;
 }
 
@@ -155,15 +153,15 @@ div.video {
     margin: 0px -20px 30px -20px;
     padding: 20px;
 
-    position: relative; /* configuracao "gambiarra" para o video ficar centralizado e se ajustar com a pagina */
-    padding-bottom: 57%; /* ajustar de acordo com cada video para que ele nao fique com barras pretas ao ser reproduzido */
+    position: relative;
+    padding-bottom: 57%;
 }
 
 div.video > iframe {
-    position: absolute; /* configuracao "gambiarra" para o video ficar centralizado e se ajustar com a pagina */
-    top: 5%; /* top e left so podem ser utilizados por estarem com "position: absolute" no video, alteram a distancia do video ate a borda da caixa */
+    position: absolute;
+    top: 5%;
     left: 5%;
-    width: 90%;  /* width e height so podem ser utilizados por estarem com "position: absolute" no video, alteram a proporcao do video na caixa */
+    width: 90%;
     height: 90%;
 }
 
@@ -178,14 +176,14 @@ aside > h3 {
     background-color: var(--cor4);
     color: white;
     padding: 10px;
-    margin: -10px -10px 0px -10px; /* margem negativa faz a caixa crescer para fora! */
+    margin: -10px -10px 0px -10px;
     border-radius: 10px 10px 0px 0px;
 }
 
 aside > ul {
-    list-style-type: '\2714\00A0'; /* esse tipo de configuracao nao funciona em todos os navegadores. O nome original do simbolo, pego no emojipedia.org, era "U-2714" onde o "U-" foi substituido por "\" para funcionar no codigo. O codigo seguinte "00A0" é o "nbsp" (espaco sem quebra), para que o simbolo fique mais afastado do texto (tambem pode ser "0020") */
-    list-style-position: inside; /* outside vem como padrao, por isso elas ficam pra fora da caixa */
-    columns: 2; /* configuracao nova */
+    list-style-type: '\2714\00A0';
+    list-style-position: inside;
+    columns: 2;
 }
 
 footer {
